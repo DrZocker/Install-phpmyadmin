@@ -56,7 +56,7 @@ chown -R www-data:www-data /usr/share/phpmyadmin/tmp/
 #MySQL Konfigurieren und User Erstellen
 PASS=`pwgen -s 40 1`
 mysql <<MYSQL_SCRIPT
-CREATE USER 'admin'@'localhost' IDENTIFIED BY '$PASS';
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'Changeme';
 GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
@@ -70,4 +70,4 @@ touch /root/phpmyadmin-data.txt
 echo -e "######### PHPMYADMIN Zugang #########" >> /root/phpmyadmin-data.txt
 echo -e "Link: http://"$ip"/phpmyadmin" >> /root/phpmyadmin-data.txt
 echo -e "User: admin" >> /root/phpmyadmin-data.txt
-echo -e "Passwort: $PASS" >> /root/phpmyadmin-data.txt
+echo -e "Passwort: Changeme" >> /root/phpmyadmin-data.txt
